@@ -1,0 +1,32 @@
+@use "../var/colors" as *;
+@use "../var/mixins" as *;
+
+.button {
+  display: inline-block;
+  font-size: 0.7em;
+  background-color: $gray-2;
+  color: #FFF;
+  padding: 11px 29px;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  outline: 0;
+  box-shadow: 0 10px 10px -8px rgba(0,0,0,.78);
+  @include md {
+    font-size: 1em;
+  }
+}
+
+.download-button {
+  border-color: $blue;
+  margin-right: 20px;
+  &:hover {
+    background-color: $blue;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.contact-button:hover {
+  background-color: #FFF;
+  color: #333;
+  transition: all .3s ease-in-out;
+}

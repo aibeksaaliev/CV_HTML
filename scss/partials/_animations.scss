@@ -1,0 +1,16 @@
+@use "../var/colors" as *;
+
+.animated-border {
+  overflow: hidden;
+  border-right: .15em solid $base-text;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+          blink-caret .75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $base-text; }
+}

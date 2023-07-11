@@ -1,0 +1,85 @@
+@use "../var/colors" as *;
+@use "../var/mixins" as *;
+
+.skills-block {
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.skills-box {
+  padding-top: 15px;
+  padding-bottom: 25px;
+  &__title {
+    font-size: 1.5em;
+    margin: 0;
+  }
+}
+
+.skills-list {
+  list-style: none;
+  padding: 18px 0 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    font-size: 0.8em;
+    padding: 5px;
+    & .skill-name {
+      display: inline-block;
+      width: 100%;
+      font-size: 1.1em;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 8px;
+    }
+  }
+}
+
+.circular-progress {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__inner-circle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: $base-bg;
+  }
+  &__percentage {
+    position: relative;
+    font-size: 1.2em;
+    color: rgb(0, 0, 0, 0.8);
+  }
+}
+
+.block-title {
+  font-size: 2em;
+  position: relative;
+  margin: 0;
+  padding: 15px 0;
+  &::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    background-color: #353535;
+    height: 2px;
+    bottom: 0;
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 90%;
+    background-color: #007ced;
+    height: 2px;
+    bottom: 0;
+  }
+}
