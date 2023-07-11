@@ -1,8 +1,14 @@
 @use "../var/colors" as *;
 @use "../var/mixins" as *;
+$telegram-logo: "../../images/telegram-logo.svg";
+$phone-logo: "../../images/phone-icon.svg";
+$gmail-logo: "../../images/mail-icon.svg";
+$github-logo-blue: "../../images/github-mark-blue.svg";
+$location-icon: "../../images/location-icon.svg";
 
 .profile-block {
   padding-top: 30px;
+  padding-bottom: 30px;
   @include md {
     display: grid;
     grid-template-columns: 40% 60%;
@@ -55,4 +61,55 @@
       }
     }
   }
+}
+
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  &__item {
+    display: inline-block;
+    width: 100%;
+    color: $blue;
+    padding: 2px 0 4px 50px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+    margin-bottom: 4px;
+  }
+  .info-phone {
+    background-image: url($phone-logo);
+  }
+  .info-email {
+    background-image: url($gmail-logo);
+  }
+  .info-location {
+    background-image: url($location-icon);
+  }
+}
+
+.contact-block {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 25px;
+  &__link {
+    display: block;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    text-indent: -250px;
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: center;
+  }
+}
+
+.contact-telegram {
+  background-image: url($telegram-logo);
+}
+
+.contact-github {
+  background-image: url($github-logo-blue);
 }
