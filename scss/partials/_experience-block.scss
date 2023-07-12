@@ -9,43 +9,68 @@ $github-logo-blue: "../../images/github-mark-blue.svg";
   }
   &__content {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+    }
   }
 }
 
 .experience-box {
   padding: 25px 15px;
-  flex-basis: 50%;
+  flex-basis: 100%;
   display: flex;
   flex-direction: column;
+  @include md {
+    flex-basis: 50%;
+  }
   &__project {
     margin: 0;
     display: flex;
+    flex-direction: column;
     padding-bottom: 15px;
     &-name {
-      font-size: 1.6em;
+      font-size: 1.2em;
       margin: 0;
+      @include md {
+        font-size: 1.3em;
+      }
+      @include lg {
+        font-size: 1.6em;
+      }
     }
     &-link {
-      display: block;
+      display: inline-block;
       text-decoration: none;
-      padding: 3px;
-      width: 25px;
-      height: 25px;
-      margin-left: 20px;
-      overflow: hidden;
-      text-indent: -75px;
+      padding: 3px 3px 6px 30px;
+      margin-top: 10px;
+      margin-right: auto;
       background-image: url($github-logo);
       background-repeat: no-repeat;
       background-size: 24px 23.5px;
+      border-bottom: 2px solid $blue;
       &:hover {
-        transform: scale(1.5);
         background-image: url($github-logo-blue);
-        transition: all .3s ease-in-out;
+        color: $blue;
+        border-color: $base-text;
+        transition: all 1s ease-in-out;
+      }
+      &:active {
+        border-color: $blue;
+        transition: all 0.2s ease-in-out;
       }
     }
   }
   &__description {
     flex-grow: 1;
     margin-top: auto;
+    font-size: 0.85em;
+    @include md {
+      font-size: 0.9em;
+    }
+    @include lg {
+      font-size: 1em;
+    }
   }
 }

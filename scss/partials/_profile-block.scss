@@ -5,6 +5,8 @@ $phone-logo: "../../images/phone-icon.svg";
 $gmail-logo: "../../images/mail-icon.svg";
 $github-logo-blue: "../../images/github-mark-blue.svg";
 $location-icon: "../../images/location-icon.svg";
+$telegram-logo-white: "../../images/telegram-logo-white.svg";
+$github-logo: "../../images/github-mark.svg";
 
 .profile-block {
   padding-top: 30px;
@@ -68,14 +70,17 @@ $location-icon: "../../images/location-icon.svg";
   flex-direction: column;
   padding-bottom: 20px;
   &__item {
-    display: inline-block;
-    width: 100%;
+    display: flex;
+    margin: 0 auto 4px;
     color: $blue;
     padding: 2px 0 4px 50px;
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: left;
-    margin-bottom: 4px;
+    @include md {
+      display: inline-block;
+      margin: 0 0 4px 0;
+    }
   }
   .info-phone {
     background-image: url($phone-logo);
@@ -108,8 +113,16 @@ $location-icon: "../../images/location-icon.svg";
 
 .contact-telegram {
   background-image: url($telegram-logo);
+  &:hover {
+    background-image: url($telegram-logo-white);
+    transition: all 1s ease-in-out;
+  }
 }
 
 .contact-github {
   background-image: url($github-logo-blue);
+  &:hover {
+    background-image: url($github-logo);
+    transition: all 1s ease-in-out;
+  }
 }

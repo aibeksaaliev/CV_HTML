@@ -326,14 +326,19 @@ a, button {
   padding-bottom: 20px;
 }
 .contact-info-block__item {
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  margin: 0 auto 4px;
   color: #007CED;
   padding: 2px 0 4px 50px;
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: left;
-  margin-bottom: 4px;
+}
+@media screen and (min-width: 860px) {
+  .contact-info-block__item {
+    display: inline-block;
+    margin: 0 0 4px 0;
+  }
 }
 .contact-info-block .info-phone {
   background-image: url("../../images/phone-icon.svg");
@@ -366,9 +371,17 @@ a, button {
 .contact-telegram {
   background-image: url("../../images/telegram-logo.svg");
 }
+.contact-telegram:hover {
+  background-image: url("../../images/telegram-logo-white.svg");
+  transition: all 1s ease-in-out;
+}
 
 .contact-github {
   background-image: url("../../images/github-mark-blue.svg");
+}
+.contact-github:hover {
+  background-image: url("../../images/github-mark.svg");
+  transition: all 1s ease-in-out;
 }
 
 .skills-block-content {
@@ -508,42 +521,79 @@ a, button {
 
 .experience-block__content {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+@media screen and (min-width: 860px) {
+  .experience-block__content {
+    flex-direction: row;
+  }
 }
 
 .experience-box {
   padding: 25px 15px;
-  flex-basis: 50%;
+  flex-basis: 100%;
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 860px) {
+  .experience-box {
+    flex-basis: 50%;
+  }
 }
 .experience-box__project {
   margin: 0;
   display: flex;
+  flex-direction: column;
   padding-bottom: 15px;
 }
 .experience-box__project-name {
-  font-size: 1.6em;
+  font-size: 1.2em;
   margin: 0;
 }
+@media screen and (min-width: 860px) {
+  .experience-box__project-name {
+    font-size: 1.3em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .experience-box__project-name {
+    font-size: 1.6em;
+  }
+}
 .experience-box__project-link {
-  display: block;
+  display: inline-block;
   text-decoration: none;
-  padding: 3px;
-  width: 25px;
-  height: 25px;
-  margin-left: 20px;
-  overflow: hidden;
-  text-indent: -75px;
+  padding: 3px 3px 6px 30px;
+  margin-top: 10px;
+  margin-right: auto;
   background-image: url("../../images/github-mark.svg");
   background-repeat: no-repeat;
   background-size: 24px 23.5px;
+  border-bottom: 2px solid #007CED;
 }
 .experience-box__project-link:hover {
-  transform: scale(1.5);
   background-image: url("../../images/github-mark-blue.svg");
-  transition: all 0.3s ease-in-out;
+  color: #007CED;
+  border-color: #F5F5F5;
+  transition: all 1s ease-in-out;
+}
+.experience-box__project-link:active {
+  border-color: #007CED;
+  transition: all 0.2s ease-in-out;
 }
 .experience-box__description {
   flex-grow: 1;
   margin-top: auto;
+  font-size: 0.85em;
+}
+@media screen and (min-width: 860px) {
+  .experience-box__description {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .experience-box__description {
+    font-size: 1em;
+  }
 }

@@ -159,4 +159,3 @@ function downloadCV() {
     document.body.removeChild(link);
 }
 
-
