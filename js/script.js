@@ -159,3 +159,24 @@ function downloadCV() {
     document.body.removeChild(link);
 }
 
+const spanElements = document.querySelectorAll('.contact-info-block__item');
+
+spanElements.forEach(function(spanElement) {
+    spanElement.addEventListener('click', function() {
+        copyText(spanElement.innerText);
+    });
+});
+
+function copyText(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+
+    document.body.appendChild(textarea);
+
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    alert('Text copied to clipboard: ' + text);
+}
