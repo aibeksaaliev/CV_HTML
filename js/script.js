@@ -147,11 +147,11 @@ function runCircularProgress(event) {
 }
 
 function downloadCV() {
-    const fileUrl = 'pdf/Software Engineer Resume in Red Black Simple Style.pdf';
+    const fileUrl = 'pdf/CV Frontend Developer Aibek Saaliev.pdf';
 
     const link = document.createElement('a');
     link.href = fileUrl;
-    link.download = 'CV Frontend Aibek Saaliev.pdf';
+    link.download = 'CV Frontend Developer Aibek Saaliev.pdf';
     link.target = '_blank';
 
     document.body.appendChild(link);
